@@ -1,0 +1,22 @@
+# This file contains information about master servers.
+
+# To change displayed string in server list, use "title" option.
+
+# Do not change server identifiers (in []),
+# except for when subservers were changed or reordered
+# in such a way it requires user confirmation to correctly select a subserver
+
+#####################
+# Official RO Servers
+[Doriya]
+ip 140.99.98.122
+port 3280
+master_version 7
+version 55
+serverType kRO_RagexeRE_2021_11_03
+charBlockSize 175
+serverEncoding Thai
+addTableFolders tRO
+field_morocc morocc-old
+field_falserealm moc_fild07
+field_izlude izlude_d
