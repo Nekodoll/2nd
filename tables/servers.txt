@@ -8,15 +8,14 @@
 
 #####################
 # Official RO Servers
-[Doriya]
-ip 140.99.98.122
-port 3280
+[2nd-RO]
+ip 103.245.164.130
+port 30791
 master_version 7
-version 55
+version 128
 serverType kRO_RagexeRE_2021_11_03
 charBlockSize 175
 serverEncoding Thai
-addTableFolders tRO
+addTableFolders kRO/Ragexe_2021_11_03;iRO
 field_morocc morocc-old
-field_falserealm moc_fild07
-field_izlude izlude_d
+private 1
