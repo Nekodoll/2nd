@@ -4,10 +4,9 @@
 !include ../config.txt
 ######## Login options and server-specific options ########
 
-master HM-Ragnarok
+master 2nd-RO
 server 0
-username 
-password 
+username MidnightsW
+password MidnightsWhisperNoon
 loginPinCode
 char 0
-adminPassword 
