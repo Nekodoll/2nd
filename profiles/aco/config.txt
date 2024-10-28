@@ -164,13 +164,13 @@ clientSight 17
 dcPause 1
 dcOnDeath 0
 dcOnDualLogin 0
-dcOnDisconnect 0
+dcOnDisconnect 1
 dcOnEmptyArrow 0
 dcOnMaxReconnections 0
 dcOnMute 0
 dcOnPM 0
 dcOnZeny 0
-dcOnStorageFull 1
+dcOnStorageFull 0
 dcOnPlayer 0
 dcOnServerShutDown 0
 dcOnServerClose 0
@@ -334,20 +334,20 @@ showAllDamage 0
 manualURL https://openkore.com/wiki/Manual
 forumURL https://forums.openkore.com
 
-logChat 1
-logPrivateChat 1
-logPartyChat 1
-logGuildChat 1
-logSystemChat 1
-logLocalBroadcast 1
-logShop 1
-logEmoticons
-logConsole 1
-logAppendUsername 1
+logChat 0
+logPrivateChat 0
+logPartyChat 0
+logGuildChat 0
+logSystemChat 0
+logLocalBroadcast 0
+logShop 0
+logEmoticons 0
+logConsole 0
+logAppendUsername 0
 logAppendServer 0
 monsterLog 0
 playerLog 0
-logDead 1
+logDead 0
 
 questDisplayStyle 2
 
