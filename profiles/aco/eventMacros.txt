@@ -21,6 +21,10 @@ automacro chageJob {
         do mconf Fabre 1 0 1
         do mconf Drop 1 0 1
         do move morocc 156 139
+		do talknpc 159 144 r3 r0 
+		do eq Mace [4]
+		
+	}
 }
 
 automacro starter {
