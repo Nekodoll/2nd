@@ -21,9 +21,16 @@ automacro chageJob {
         do mconf Fabre 1 0 1
         do mconf Drop 1 0 1
         do move morocc 156 139
-		do talknpc 159 144 r3 r0 
+		do talknpc 159 144 r3 r0
 		do eq Mace [4]
-		
+        do move mocrocc 155 95
+        do talknpc 159 98 r0
+        do talknpc 154 98 r0
+        do send 19 0a
+        do talk resp 0
+        do talk resp 1
+        do talk resp 16
+        do talk resp 16
 	}
 }
 
@@ -47,6 +54,8 @@ automacro starter {
         do conf monsterLog 0
         do conf playerLog 0
         do conf logDead 0
+        do conf clientSight 50
+        do conf attackRouteMaxPathDistance 50
         do conf sitAuto_hp_lower 0
         do conf sitAuto_hp_upper 0
         do conf sitAuto_sp_lower 0
@@ -61,7 +70,7 @@ automacro starter {
         do conf statsAddAuto_dontUseBonus 1
         do conf statsAddAuto_list 20 dex, 20 str, 80 agi,42 dex,46 int,96 agi,72 str
         do conf skillsAddAuto 1
-        do conf skillsAddAuto_list 1 9,24 1, 26 2,28 1,22 3,23 10,22 10,35 1,32 10,27 4,25 1,259 5,261 5,265 5,263 5,272 5,273 5,263 10,259 10
+        do conf skillsAddAuto_list 1 9,24 1, 26 1,28 1,22 3,23 10,22 10,35 1,32 10,27 4,25 1,259 5,261 5,265 5,263 5,272 5,273 5,263 10,259 10
         do move new_1-1 148 112
         do move new_1-2 100 26
         do talknpc 100 29 r0 r0
@@ -75,9 +84,9 @@ automacro starter {
         }
 }
 
-        
+
 automacro DealAuto {
-    CharCurrentWeight > 50%
+    CharCurrentWeight > 49%
     exclusive 1
     timeout 400
     call {
