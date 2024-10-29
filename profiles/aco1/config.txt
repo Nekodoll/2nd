@@ -1,6 +1,8 @@
 # Please Read the Users Manual
 # The Manual is located at https://openkore.com/wiki/Manual
 !include ../help.txt
+teleport_search 1 
+teleport_search_minSp 10
 ######## Login options and server-specific options ########
 
 master 2nd-RO
