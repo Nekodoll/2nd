@@ -2,7 +2,7 @@
 # If you want to really mess up the bot, go ahead :)
 #
 # The value of each variable is reffered as "x".
-
+  ai_teleport_search 2
 # Server connection timeouts
 master 12
 gamelogin 12
