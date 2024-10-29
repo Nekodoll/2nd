@@ -3,12 +3,46 @@ useSelf_item Potato, apple, carrot, Novice Potion,Freshly Squeezed Milk, red Her
 }
 
 ##################################
-
-useSelf_item Awakening Potion {
+attackSkillSlot {
+	lvl 5
+	maxDist
+	maxAttempts 
+	maxUses 1
+}
+attackSkillSlot 59 {
+	lvl 5
+	maxDist 18
+	maxAttempts 
+	aggressives < 3
+	monsters
+	notMonsters Argiope,Argos,Poring
+	maxUses 
+}
+attackSkillSlot 56 {
+	lvl 5
+	maxDist 
+	aggressives < 3
+	maxAttempts 
+	monsters Argiope,Argos
+	notMonsters
+	maxUses 
+}
+attackSkillSlot 57 {
+	lvl 10
+	dist 1..3
+	sp > 10%
+	aggressives >= 3
+	inLockOnly 
+	timeout 
+	monsters
+	maxAttempts 
+	maxUses 
+}
+useSelf_item Awakening Potion,Berserk Potion {
 	whenStatusActive
-	whenStatusInactive Awakening Potion
+	whenStatusInactive Awakening Potion,EFST_ATTHASTE_POTION3
 	stopWhenHit 0
-	inLockOnly 0
+	inLockOnly 1
 	notWhileSitting 1
 	notInTown 1
 	timeout 20
@@ -19,76 +53,34 @@ useSelf_item Awakening Potion {
 	manualAI 0
 }
 
+
+
+
+
+
+
+
+##########################
 useSelf_skill 28 {
-	hp < 70%
-}
-
-
-useSelf_item [Event] Concentration Potion {
-	whenStatusInactive Concentration Potion
-	timeout 20
-	inLockOnly 1
-}
-
-
-useSelf_skill AL_INCAGI {
 	lvl 10
-	sp > 10
-	whenStatusInactive Increase AGI
-	timeout 5
-}
-useSelf_skill 261 {
-	lvl 5
-	sp > 20
-	spirit <5
-	notWhileSitting 1
-	notInTown 0
-	disabled 0
+	hp < 70%
+	notInTown 1
 	stopWhenHit 1
-}
 
-##################################
-
-attackSkillSlot Spiritual Sphere Absorption {
-	lvl 1
-	dist 8
-	maxDist
-	maxCastTime 0
-	minCastTime 0
-	hp
-	sp < 50%
 }
-attackComboSlot 272 {
-	afterSkill 263
-	sp > 20%
-	isSelfSkill 1
-	waitBeforeUse 0
-	autoCombo 0
-	target_deltaHp
+attackComboSlot Raging Quadruple Blow {
+      afterSkill Raging Trifecta Blow
+      isSelfSkill 1
+      waitBeforeUse 0
+      monsters
+      maxUses 
+      autoCombo 1
 }
-
-attackComboSlot Chain Combo {
-	afterSkill Triple Attack
-	waitBeforeUse 0.1
-	dist 1.5
-	isSelfSkill 1
-}
-
-attackComboSlot Chain Combo {
-	afterSkill Triple Attack
-	waitBeforeUse 0.2
-	dist 1.5
-	isSelfSkill 1
-}
-attackComboSlot Combo Finish {
-	afterSkill Chain Combo
-	waitBeforeUse 0.1
-	dist 1.5
-	isSelfSkill 1
-}
-attackComboSlot Combo Finish {
-	afterSkill Chain Combo
-	waitBeforeUse 0.2
-	dist 1.5
-	isSelfSkill 1
+attackComboSlot Raging Thrust {
+      afterSkill Raging Quadruple Blow
+      isSelfSkill 1
+      waitBeforeUse 0
+      monsters
+      maxUses 
+      autoCombo 1
 }

@@ -1,13 +1,29 @@
-# This file contains information about master servers.
+[HM-Ragnarok]
+ip 203.159.92.73
+port 30211
+master_version 7
+version 55
+serverType kRO_RagexeRE_2021_11_03
+charBlockSize 175
+serverEncoding Thai
+addTableFolders tRO
+field_morocc morocc-old
+field_falserealm moc_fild07
+field_izlude izlude_d
 
-# To change displayed string in server list, use "title" option.
+[Earn-RO]
+ip 203.159.92.73
+port 32091
+master_version 7
+version 128
+serverType kRO_RagexeRE_2021_11_03
+charBlockSize 175
+serverEncoding Thai
+addTableFolders kRO/Ragexe_2021_11_03;iRO
+field_morocc morocc-old
+field_payon old_payon
+private 1
 
-# Do not change server identifiers (in []),
-# except for when subservers were changed or reordered
-# in such a way it requires user confirmation to correctly select a subserver
-
-#####################
-# Official RO Servers
 [2nd-RO]
 ip 103.245.164.130
 port 30791
