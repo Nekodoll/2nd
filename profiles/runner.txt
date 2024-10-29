@@ -76,3 +76,34 @@ automacro starter {
 }
 
         
+automacro DealAuto {
+    CharCurrentWeight > 50%
+    exclusive 1
+    timeout 400
+    call {
+        #do ai manual
+        do respawn
+        do move morocc 155 95
+        pause 2
+    @tmpINV = (etc,etc,equip,equip,card,usable,usable)
+    $j = 0
+    while ($j < 7) {
+    @tmpI = &InventoryType ($tmpINV[$j])
+    if ($tmpI[0] > -1) {
+        do deal Shop
+        pause 2
+        $i = 0
+        while ($i < @tmpI && $i<10) {
+            do deal add $tmpI[$i]
+            $i++
+            }
+        do deal
+        pause 2
+        do deal
+
+    }
+    $j++
+    }
+    #do ai on
+}
+}
