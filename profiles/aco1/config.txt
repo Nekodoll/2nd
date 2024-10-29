@@ -87,7 +87,7 @@ attackUseWeapon 1
 attackNoGiveup 0
 attackCanSnipe 0
 attackCheckLOS 0
-attackRouteMaxPathDistance 13
+attackRouteMaxPathDistance 40
 attackLooters 0
 attackLooters_dist 1
 attackChangeTarget 1
@@ -162,7 +162,7 @@ cachePlayerNames 1
 cachePlayerNames_duration 900
 cachePlayerNames_maxSize 100
 
-clientSight 17
+clientSight 50
 
 dcPause 1
 dcOnDeath 0
