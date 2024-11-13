@@ -1,3 +1,4 @@
+!include warp.txt
 automacro chageJob {
         InMap new_1-3
         JobLevel = 10
@@ -14,26 +15,50 @@ automacro chageJob {
         pause 0.2
         do talk resp 0
         pause 0.2
+        do move 159 121
+        do talknpc 159 144 r3 r0
         do mconf all 1 0 1
         do mconf Lunatic 1 0 1
         do mconf Picky 1 0 1
         do mconf Poring 1 0 1
         do mconf Fabre 1 0 1
         do mconf Drop 1 0 1
-        do move morocc 156 139
-		do talknpc 159 144 r3 r0
 		do eq Mace [4]
-        do move mocrocc 155 95
-        do talknpc 159 98 r0
-        do talknpc 154 98 r0
         do send 19 0a
         do talk resp 0
-        do talk resp 1
-        do talk resp 16
-        do talk resp 16
+        do talk resp 0
+        do talk resp 23
+        do move prontera 146 90
+        do talknpc 146 89 r0
+        do conf sellAuto 1
+        do conf sellAuto_npc prontera 105 87
+        do conf saveMap prontera
+        do conf storageAuto 0
+        do conf lockMap gef_fild04
+        do is aai
+    do talk resp 1
+    do talk resp 6
+    do talk resp 3
+    do talk num 2
+    do talk resp 5
+        do ai on
 	}
 }
-
+macro pron {
+        do ai manual
+        do send 19 0a
+        do talk resp 0
+        do talk resp 0
+        do talk resp 23
+        do move prontera 146 90
+        do talknpc 146 89 r0
+        do conf sellAuto 1
+        do conf sellAuto_npc prontera 105 87
+        do conf saveMap prontera
+        do conf storageAuto 0
+        do conf lockMap gef_fild04
+        do ai on
+}
 automacro starter {
         JobID 0
         InMap new_1-1
@@ -70,7 +95,7 @@ automacro starter {
         do conf statsAddAuto_dontUseBonus 1
         do conf statsAddAuto_list 20 dex, 20 str, 80 agi,42 dex,46 int,96 agi,72 str
         do conf skillsAddAuto 1
-        do conf skillsAddAuto_list 1 9,24 1, 26 2,28 1,22 3,23 10,22 10,35 1,32 10,27 4,25 1,259 5,261 5,265 5,263 5,272 5,273 5,263 10,259 10
+        do conf skillsAddAuto_list 1 9,24 1, 26 2,28 3,29 10 ,22 5,34 10,23 10,22 10,28 6,259 5,261 5,265 5,263 5,272 5,273 5,263 10,259 10,262 1,265 10,28 8,35 1
         do move new_1-1 148 112
         do move new_1-2 100 26
         do talknpc 100 29 r0 r0
@@ -85,25 +110,32 @@ automacro starter {
 }
 
 
-automacro DealAuto {
-    CharCurrentWeight > 49%
-    exclusive 1
-    timeout 400
-    call {
-        #do ai manual
+macro buff {
+    do respawn
+    do move prontera 146 90
+    do talknpc 146 74 r0
+}
+
+macro deal {
+        do ai manual
+        do is aai
+        pause 1
+        do talk resp 2
         do respawn
-        do move morocc 155 95
+        do move prontera 115 74
         pause 2
-    @tmpINV = (etc,etc,equip,equip,card,usable,usable)
+    @tmpINV = (usable,etc,etc,etc,equip,equip,equip,card)
     $j = 0
-    while ($j < 7) {
+    while ($j < 8) {
     @tmpI = &InventoryType ($tmpINV[$j])
     if ($tmpI[0] > -1) {
         do deal Shop
         pause 2
         $i = 0
         while ($i < @tmpI && $i<10) {
-            do deal add $tmpI[$i]
+            if ($tmpI[$i] != &inventory (aai)) {
+                do deal add $tmpI[$i]
+            }
             $i++
             }
         do deal
@@ -113,10 +145,8 @@ automacro DealAuto {
     }
     $j++
     }
-    #do ai on
+    do ai on
 }
-}
-
 
 macro setAi {
     do send 19 0a
@@ -128,6 +158,242 @@ macro setAi {
     do talk resp 0
 
 }
+
+
+
+
+macro run {
+        do ai manual
+        do is aai
+        do talk resp 0
+        do ai on
+}
+macro botSet {
+    do is aai
+    do talk resp 1
+    do talk resp 6
+    do talk resp 3
+    do talk num 2
+    do talk resp 5
+    do is aai
+    do talk resp 0
+}
+
+macro gef {
+    do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 4
+                pause 0.2
+                do talk resp 4
+
+}
+
+automacro lvl15_aco {
+    JobID 4
+    InMap gef_fild04
+    BaseLevel >= 15
+    BaseLevel < 30
+    call {
+        do conf lockMap pay_fild08
+        do is aai
+
+        do talk resp 1
+        do talk resp 7
+        do talk resp 0
+        do talk num 1014
+        do talk resp 0
+        do talk num 1010
+        do talk resp 0
+        do talk num 1008
+        do talk resp 0
+        do talk num 1002
+        do talk resp 4
+        do talk resp 8
+        do talk resp 4
+        do talk resp 0
+        do talk resp 2
+        do respawn
+
+    }
+
+}
+automacro lvl35_aco {
+    JobID 4
+    InMap pay_fild08
+    BaseLevel >= 35
+    BaseLevel < 49
+    call {
+        do conf lockMap pay_fild02
+        do is aai
+
+        do talk resp 1
+        do talk resp 7
+        do talk resp 0
+        do talk num 1025
+        do talk resp 0
+        do talk num 1031
+        do talk resp 4
+        do talk resp 8
+        do talk resp 4
+        do talk resp 0
+        do talk resp 2
+        do mconf Wolf 0 0 0
+        do respawn
+
+    }
+
+}
+
+automacro lvl50_aco {
+    JobID 4
+    InMap pay_fild02,gef_fild05,prt_fild04
+    BaseLevel >= 55
+    BaseLevel < 70
+    run-once 1
+    call {
+        do conf lockMap pay_fild07
+        do is aai
+
+        do talk resp 1
+        do talk resp 7
+        do talk resp 0
+        do talk num 1060
+        do talk resp 0
+        do talk num 1033
+        do talk resp 0
+        do talk num 1116
+        do talk resp 4
+        do talk resp 8
+        do talk resp 4
+        do talk resp 0
+        do talk resp 2
+        do respawn
+
+    }
+
+}
+automacro lvl65_aco {
+    InMap pay_fild02,gef_fil11,pay_fild07
+    BaseLevel >= 65
+    BaseLevel < 70
+    run-once 1
+    call {
+        do conf lockMap cmd_fild09
+        do is aai
+
+        do talk resp 1
+        do talk resp 7
+        do talk resp 2
+        do talk resp 4
+        do talk resp 8
+        do talk resp 4
+        do talk resp 0
+        do talk resp 2
+        do respawn
+
+    }
+
+}
+automacro lvl65_aco_sub {
+    InMap cmd_fild09,pay_fild07
+    BaseLevel >= 70
+    run-once 1
+    call {
+        do conf lockMap gef_fild11
+        do is aai
+        do talk resp 1
+        do talk resp 7
+        do talk resp 2
+        do talk resp 0
+        do talk num 1031
+        do talk resp 0
+        do talk num 1122
+        do talk resp 0
+        do talk num 1123
+        do talk resp 0
+        do talk num 1124
+        do talk resp 0
+        do talk num 1125
+        do talk resp 0
+        do talk num 1126
+        do talk resp 0
+        do talk num 1258
+        do talk resp 0
+        do talk num 1299
+        do talk resp 0
+        do talk num 1392
+        do talk resp 4
+        do talk resp 8
+        do talk resp 4
+        do talk resp 0
+        do talk resp 2
+        do respawn
+
+    }
+
+}
+automacro getstunner {
+	InInventory "Stunner" < 1
+	timeout 6000
+	BaseLevel >= 27
+	JobID 4
+	call {
+		do pm Shop stunnergo
+	}
+}
+automacro getmailstunner {
+	PrivMsg /gmail/
+	exclusive 1
+	timeout 20
+	run-once 1
+	call getStunner
+}
+macro getStunner {
+    do rodex open
+	do rodex read 0
+	do rodex getitems 0
+	do rodex delete 0
+	do rodex close
+	do eq &inventory (Stunner)
+	do respawn
+
+}
+
+automacro monkChange {
+    JobLevel = 50
+    JobID 4
+    run-once 1
+    exclusive 1
+    call {
+        do ai manual
+        do is aai
+        do talk resp 2
+        do send 19 0A
+        do talk resp 0
+        pause 0.2
+        do talk resp 0
+        pause 0.2
+        do talk resp 0
+        pause 0.2
+        do move 159 121
+        do talknpc 159 144 r1 r0
+        do eq Fist
+        do respawn
+        do ai
+
+
+    }
+
+}
+
+
+
+###################################### WARP NPC MACRO ###############################
+#######################################################################################
 automacro warplastpoint {
     SimpleHookEvent AI/lockMap
 	InLockMap 0
@@ -135,7 +401,12 @@ automacro warplastpoint {
 	timeout 5
 	exclusive 1
     	call {
-            do talknpc 154 98 r0 n
+            if ($.map == prontera) {
+                do move prontera 146 90
+                do talknpc 146 81 r0
+                pause 2
+            }
+
             if (&config (lockMap) == prt_fild08) {
                 do send 19 0A
                 pause 0.2
@@ -145,6 +416,138 @@ automacro warplastpoint {
                 do talk resp 7
 
             }
+            if (&config (lockMap) == gef_fild04) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 4
+                pause 0.2
+                do talk resp 4
+
+            }
+            if (&config (lockMap) == prt_fild04) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 16
+                pause 0.2
+                do talk resp 3
+
+            }
+            if (&config (lockMap) == prt_fild05) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 16
+                pause 0.2
+                do talk resp 4
+
+            }
+            if (&config (lockMap) == prt_fild06) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 16
+                pause 0.2
+                do talk resp 5
+
+            }
+            if (&config (lockMap) == pay_fild08) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 15
+                pause 0.2
+                do talk resp 7
+
+            }
+            if (&config (lockMap) == pay_fild02) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 15
+                pause 0.2
+                do talk resp 1
+
+            }
+            if (&config (lockMap) == pay_fild07) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 15
+                pause 0.2
+                do talk resp 6
+
+            }
+            if (&config (lockMap) == pay_dun01) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 2
+                pause 0.2
+                do talk resp 24
+                pause 0.2
+                do talk resp 1
+
+            }
+            if (&config (lockMap) == gef_fild11) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 4
+                pause 0.2
+                do talk resp 11
+
+            }
+            if (&config (lockMap) == cmd_fild09) {
+                do move prontera 146 90
+                do send 19 0A
+                pause 0.2
+                do talk resp 0
+                pause 0.2
+                do talk resp 1
+                pause 0.2
+                do talk resp 2
+                pause 0.2
+                do talk resp 8
+
+            }
+
 
         }
 }
+
