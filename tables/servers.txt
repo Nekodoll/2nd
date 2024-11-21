@@ -35,3 +35,15 @@ serverEncoding Thai
 addTableFolders kRO/Ragexe_2021_11_03;iRO
 field_morocc morocc-old
 private 1
+
+[Aifree]
+ip 45.144.166.210
+port 31191
+master_version 7
+version 55
+serverType kRO_RagexeRE_2021_11_03
+charBlockSize 175
+serverEncoding Thai
+addTableFolders kRO/Ragexe_2021_11_03;iRO
+field_morocc morocc-old
+private 1

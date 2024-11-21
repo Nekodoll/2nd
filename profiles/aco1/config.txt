@@ -6,12 +6,12 @@ teleport_search_minSp 10
 
 ######## Login options and server-specific options ########
 
-master 2nd-RO
-server 0
-username 
-password MidnightsWhisperNoon
+master Aifree
+server
+username aicats
+password wasd1111
 loginPinCode
-char 1
+char
 
 
 # Poseidon Settings: https://openkore.com/wiki/Poseidon
@@ -41,7 +41,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword cretawes
+adminPassword gepropet
 callSign
 commandPrefix ;
 callSignGM 0
@@ -262,7 +262,7 @@ sitAuto_look
 sitAuto_look_from_wall
 sitTensionRelax 0
 
-statsAddAuto 1
+statsAddAuto 0
 statsAddAuto_list 20 dex, 20 str, 80 agi,42 dex,46 int,96 agi,72 str
 statsAddAuto_dontUseBonus 1
 statsAdd_over_99 1
