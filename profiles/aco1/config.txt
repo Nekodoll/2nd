@@ -8,8 +8,8 @@ teleport_search_minSp 10
 
 master Aifree
 server
-username aicats
-password wasd1111
+username 
+password 
 loginPinCode
 char
 
@@ -168,7 +168,7 @@ clientSight 50
 dcPause 1
 dcOnDeath 0
 dcOnDualLogin 0
-dcOnDisconnect 1
+dcOnDisconnect 0
 dcOnEmptyArrow 0
 dcOnMaxReconnections 0
 dcOnMute 0
@@ -194,7 +194,7 @@ followBot 0
 
 itemsTakeAuto 2
 itemsTakeAuto_party 0
-itemsGatherAuto 2
+itemsGatherAuto 0
 itemsGatherAuto_notInTown 0
 itemsGatherAutoMinPlayerDistance 6
 itemsGatherAutoMinPortalDistance 5
@@ -205,7 +205,7 @@ cartMaxWeight 7900
 itemsTakeGreed 0
 itemsCheckWeight 1
 
-lockMap gef_fild11
+lockMap 
 lockMap_x
 lockMap_y
 lockMap_randX
@@ -236,7 +236,7 @@ runFromTarget_dist 5
 runFromTarget_minStep 7
 runFromTarget_maxPathDistance 13
 
-saveMap prontera
+saveMap morocc
 saveMap_warpToBuyOrSell 1
 saveMap_warpChatCommand @load
 memo1
@@ -263,7 +263,7 @@ sitAuto_look_from_wall
 sitTensionRelax 0
 
 statsAddAuto 0
-statsAddAuto_list 20 dex, 20 str, 80 agi,42 dex,46 int,96 agi,72 str
+statsAddAuto_list 20 dex, 20 str, 80 agi,42 dex,46 int,96 agi,78 str
 statsAddAuto_dontUseBonus 1
 statsAdd_over_99 1
 
