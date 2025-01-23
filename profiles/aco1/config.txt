@@ -7,11 +7,11 @@ teleport_search_minSp 10
 ######## Login options and server-specific options ########
 
 master Aifree
-server
-username 
-password 
+server 0
+username aicats4
+password wasd1111
 loginPinCode
-char
+char 0
 
 
 # Poseidon Settings: https://openkore.com/wiki/Poseidon
@@ -41,7 +41,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword gepropet
+adminPassword pruclouz
 callSign
 commandPrefix ;
 callSignGM 0
@@ -205,7 +205,7 @@ cartMaxWeight 7900
 itemsTakeGreed 0
 itemsCheckWeight 1
 
-lockMap 
+lockMap
 lockMap_x
 lockMap_y
 lockMap_randX

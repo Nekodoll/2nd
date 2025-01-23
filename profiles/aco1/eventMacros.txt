@@ -1,1 +1,43 @@
-!include ../runner.txt
+macro zeny_slot {
+	do talknpc 120 98 r0 r0
+	#NpcMsg /your return point was saved/
+}
+
+automacro zjk_step1 {
+	CharCurrentWeight < 80%
+	NpcMsg /1,000,000 Zeny/i
+	exclusive 1
+	timeout 1
+	call {
+	do talk resp 2
+	pause 2
+	do talknpc 120 98 r0 r0
+}
+}
+#Aumdura|
+automacro zjk_step3 {
+	NpcMsg /(1M-2M Bag|Bloody Branch|Equipment Coupon|Bolt Aura Blue|RWC2013 Japan Hat|Gym Pass|Sheriff Badge)/ 
+	exclusive 1
+	timeout 1
+	call {
+	do talk resp 1
+	pause 2
+	do talk resp 3
+	pause 1
+	do talknpc 120 98 r0 r0
+	}
+	
+}
+automacro zjk_step2 {
+	NpcMsg /300,000 Zeny/i
+	exclusive 1
+	timeout 1
+	call {
+	do talk resp 0
+	}
+}
+
+###############################
+macro Mushroom {
+	do talk &npc(/#/i)
+}

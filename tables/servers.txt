@@ -37,7 +37,7 @@ field_morocc morocc-old
 private 1
 
 [Aifree]
-ip 45.144.166.210
+ip 103.253.74.200
 port 31191
 master_version 7
 version 55

@@ -11763,3 +11763,7 @@
 1100004#Concentrated Blue Syrup Potion#
 1100005#Concentrated Golden Syrup Potion#
 111111#aai#
+23002#[Novice] Bubble Gum#                                   
+32766#Rank Status#
+28021#Cap 7 Day#
+31113#Pajamas 7 Day#
