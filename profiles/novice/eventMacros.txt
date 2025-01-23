@@ -1,0 +1,28 @@
+!include ../start_novice.txt
+
+automacro warplastpoint {
+    	SimpleHookEvent AI/lockMap
+	InLockMap 0
+	JobIDNot 0
+    	overrideAI 1
+	timeout 5
+	exclusive 1
+    	call {
+    	release botstart
+    	do talknpc 157 36
+    	do talknpc 160 36 r0
+
+
+	}
+}
+automacro botstart {
+	run-once 1
+	JobIDNot 0
+	exclusive 1
+	InLockMap 1
+	call {
+		do c \@boton
+		do talk resp 0
+		do c \@autoloot 100
+	}
+}
