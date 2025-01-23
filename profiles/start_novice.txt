@@ -1,0 +1,89 @@
+automacro starter {
+        JobID 0
+        InMap new_1-1
+        run-once 1
+        exclusive 1
+        call {
+        do conf logChat 0
+        do conf logPrivateChat 0
+        do conf logPartyChat 0
+        do conf logGuildChat 0
+        do conf logSystemChat 0
+        do conf logLocalBroadcast 0
+        do conf logShop 0
+        do conf logEmoticons 0
+        do conf logConsole 0
+        do conf logAppendUsername 0
+        do conf logAppendServer 0
+        do conf monsterLog 0
+        do conf playerLog 0
+        do conf logDead 0
+        do conf clientSight 50
+        do conf attackRouteMaxPathDistance 50
+        do conf sitAuto_hp_lower 0
+        do conf sitAuto_hp_upper 0
+        do conf sitAuto_sp_lower 0
+        do conf sitAuto_sp_upper 0
+        do conf teleportAuto_search 0
+        do conf dcOnStorageFull 0
+        do conf sellAuto 0
+        do conf storageAuto 0
+        do conf statsAddAuto 0
+        do conf lockMap unset
+        do conf statsAddAuto 1
+        do conf statsAddAuto_dontUseBonus 1
+        do conf statsAddAuto_list 20 dex, 30 str, 80 agi,42 dex,46 int,96 agi,72 str
+        do conf skillsAddAuto 1
+        do conf skillsAddAuto_list 1 9
+        do move new_1-1 148 112
+        do move new_1-2 100 26
+        do talknpc 100 29 r0 r0
+        do mconf all 2 0 1
+        do talknpc 99 40 r0
+	do conf lockMap $.map
+	do eq Tattered Novice Ninja Suit 
+	do eq Novice False Eggshell 
+	do eq Novice Slippers 
+	do eq Somber Novice Hood 
+	do eq Novice Guard 
+	do eq Novice Main Gauche 
+	do is Cap 7 Day
+	do eq Pajamas 7 Day
+        }
+}
+
+automacro autobuff_st {
+	InMap new_1-3
+	StatusInactiveHandle Blessing
+	timeout 30
+	exclusive 1
+	call {
+	do move 90 30
+	do talknpc 91 33
+}
+}
+
+automacro changeJob {
+	InMap new_1-3
+	BaseLevel >= 45
+	timeout 3
+	run-once 1
+	call {
+	do ai manual
+	do move 95 43
+	do talknpc 99 43 
+	pause 2
+	do move 155 113
+	do talknpc 155 113 r6 r0
+	do conf sellAuto 1
+	do conf sellAuto_npc morocc 163 36
+	do conf storageAuto 1
+	do conf storageAuto_npc morocc 154 36
+	do move 161 39
+	do talknpc 154 36 r0
+	do c @skillall
+	do talknpc 166 36 r3 r38 r0
+	do conf lockMap $.map
+	
+}
+}

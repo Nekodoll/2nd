@@ -1,0 +1,17 @@
+macro close_log {
+    do conf logChat 0
+    do conf logPrivateChat 0
+    do conf logPartyChat 0
+    do conf logGuildChat 0
+    do conf logSystemChat 0
+    do conf logLocalBroadcast 0
+    do conf logShop 0
+    do conf logEmoticons 0
+    do conf logConsole 0
+    do conf logAppendUsername 0
+    do conf logAppendServer 0
+    do conf monsterLog 0
+    do conf playerLog 0
+    do conf logDead 0
+    do conf dcOnStorageFull 0
+}
